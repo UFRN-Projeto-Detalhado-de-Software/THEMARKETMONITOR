@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\AnaliseController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,4 +19,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get(analise-produto, 'AnaliseController@mostrarAnalise');
+Route::get('analise-produto', [AnaliseController::class, 'mostrarAnalise']);
