@@ -18,7 +18,7 @@
             <p>
                 <label>
                     Nome Completo do Cliente
-                    <input type="text" name="nome_completo"  placeholder="Nome Completo do Cliente">
+                    <input type="text" name="nome_completo" required  placeholder="Nome Completo do Cliente">
                 </label>
             </p>
 
@@ -27,14 +27,14 @@
             <p>
                 <label>
                     E-mail do Cliente
-                    <input type="text" name="email"  placeholder="E-mail do Cliente">
+                    <input type="text" name="email" required placeholder="E-mail do Cliente">
                 </label>
             </p>
 
             <p>
                 <label>
                     CPF do Cliente
-                    <input type="text" name="cpf" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})"   placeholder="CPF do Cliente">
+                    <input type="text" name="cpf" required pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})"   placeholder="CPF do Cliente">
                 </label>
             </p>
             <p>
@@ -98,7 +98,7 @@
             <p>
                 <label>
                     Telefone
-                    <input type="text" name="telefone"  placeholder="telefone do cliente">
+                    <input type="text" name="telefone" required placeholder="telefone do cliente">
                 </label>
             </p>
 
@@ -124,7 +124,7 @@
             <p>
                 <label>
                     data de nascimento
-                    <input type="date" name="data_de_nascimento"  placeholder="data de nascimento  do cliente">
+                    <input type="date" name="data_de_nascimento" required placeholder="data de nascimento  do cliente">
                 </label>
             </p>
 

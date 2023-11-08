@@ -51,7 +51,6 @@ class VendasController extends Controller
      */
     public function store(Request $request)
     {
-        info($request->all());
 
         $validationRules = [
             'cliente' => 'required',

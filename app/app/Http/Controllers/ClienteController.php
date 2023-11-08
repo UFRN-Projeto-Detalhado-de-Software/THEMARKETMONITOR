@@ -37,6 +37,36 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
+        $validationRules = [
+            'nome_completo' => 'required',
+            'data_de_nascimento' => 'required',
+            'email' => 'required',
+            'endereco' => 'nullable',
+            'numero' => 'nullable',
+            'bairro' => 'nullable',
+            'complemento' => 'nullable',
+            'cidade' => 'nullable',
+            'estado' => 'nullable',
+            'cep' => 'nullable',
+            'telefone' => 'required',
+            'genero' => 'nullable',
+            'area_de_formacao' =>'nullable',
+        ];
+        $request->validate($validationRules);
+
+        // Crie um array para armazenar mensagens sobre campos ausentes
+        $missingFields = [];
+        foreach ($validationRules as $field => $rule) {
+            if (!$request->has($field)) {
+                $missingFields[] = $field;
+            }
+        }
+
+        // Se algum campo obrigatório estiver faltando, redirecione com uma mensagem de erro
+        if (!empty($missingFields)) {
+            return redirect()->back()->withErrors(['message' => 'Por favor, preencha todos os campos obrigatórios. Campos em falta: ' . implode(', ', $missingFields)]);
+        }
+
         $this->clienteService->create($request);
 
         return redirect()->back()->with('message', 'Criado com Sucesso');

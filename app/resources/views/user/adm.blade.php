@@ -24,7 +24,7 @@
         @endif
 
         <a href="{{route('perfil.edit_funcionario', ['user' => $usuario->id])}}">Editar usuário</a>
-
+    @endforeach
 
     @if($funcionario)
         <a href="{{route('perfil.create_meta', ['funcionario' => $funcionario->id])}}">Criar meta para usuário</a>
