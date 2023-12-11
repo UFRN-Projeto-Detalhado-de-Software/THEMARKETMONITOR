@@ -33,6 +33,7 @@
             </select>
             <select name="closer" required id="id" >
                 <option value="" selected>Escolha um Vendedor</option>
+                <option value="0">Nenhum</option>
                 @foreach($closer as $id => $nome)
                     <option value="{{ $id }}">{{ $nome }}</option>
                 @endforeach

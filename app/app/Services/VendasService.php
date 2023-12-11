@@ -33,7 +33,7 @@ class VendasService
 
     public function update(VendaDTO $vendaDTO, $id)
     {
-        if($this->strategy->validate_update($id)){
+        if($this->strategy->validate_update($vendaDTO,$id)){
             return $this->vendasRepository->update($vendaDTO, $id);
         }
 
